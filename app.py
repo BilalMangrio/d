@@ -4,10 +4,6 @@ import pickle
 
 app = Flask(__name__)
 
-Depr=pickle.load(open('depression_model.pickle','rb'))
-Str=pickle.load(open('StressModel.pickle','rb'))
-Anx=pickle.load(open('AnxietyModel.pickle','rb'))
-
 @app.route('/')
 def home():
     return render_template('index.html')
