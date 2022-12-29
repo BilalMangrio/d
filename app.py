@@ -13,8 +13,12 @@ def depression_api_method():
   
   data = request.get_json()
   array = data['questionScoresArray']
-  sum = sum(array)
+  sum = 0
+  for element in array:
+    sum += element
   
+  print(sum)
+
   if sum >= 0 and sum <= 9:
       final_prediction = 0
   elif sum >= 10 and sum <= 16:
@@ -33,7 +37,11 @@ def stress_api():
   
   data = request.get_json()
   array = data['questionScoresArray']
-  sum = sum(array)
+  sum = 0
+  for element in array:
+    sum += element
+  
+  print(sum)
   
   if sum >= 0 and sum <= 9:
       final_prediction = 0
@@ -53,8 +61,12 @@ def anxiety_api():
   
   data = request.get_json()
   array = data['questionScoresArray']
-  sum = sum(array)
+  sum = 0
+  for element in array:
+    sum += element
   
+  print(sum)
+
   if sum >= 0 and sum <= 9:
       final_prediction = 0
   elif sum >= 10 and sum <= 16:
