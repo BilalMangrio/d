@@ -22,18 +22,6 @@ def depression_api_method():
   #print(question_scores)
   prediction = Depr.predict(question_scores)
   final_prediction=int(prediction[0])
-  if(final_prediction==0):
-    final_='you are normal '
-  elif(final_prediction==1):
-    final_='you have mild depression'
-  elif(final_prediction==2):
-    final_='you have moderate depression'
-  elif(final_prediction==3):
-    final_='you have severe depression'
-  else:
-    print('unfortunately we couldnt predict ')
-    
-  print(final_)
   return  jsonify(final_prediction)
 
 @app.route('/stress', methods=['POST'])
